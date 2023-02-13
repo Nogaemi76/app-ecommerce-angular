@@ -1,7 +1,9 @@
 <app-top-menu></app-top-menu>
-<!-- <router-outlet></router-outlet> -->
+
 <ul>
   <li class="text" *ngFor="let item of courses | async">
     {{item.title}}
   </li>
 </ul>
+
+<router-outlet></router-outlet>

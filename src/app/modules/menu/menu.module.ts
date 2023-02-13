@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MaterialModule } from 'src/app/material.module';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 
@@ -7,7 +8,8 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
     TopMenuComponent
   ],
   imports: [
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   exports: [
     TopMenuComponent

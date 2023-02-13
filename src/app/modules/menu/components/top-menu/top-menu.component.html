@@ -5,12 +5,21 @@
   <span>DevCourses Shop</span>
   <ul>
     <li>
-      <a mat-button>Home</a>
-      <a mat-button>Courses</a>
-      <a mat-button>About</a>
-      <a mat-button>
+      <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+true}">Home</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/courses" routerLinkActive="active-link">Courses</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/about" routerLinkActive="active-link">About</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/login" routerLinkActive="active-link">
         <mat-icon>login</mat-icon>
       </a>
+    </li>
+    <li>
       <a mat-button>
         <mat-icon>shopping_cart</mat-icon>
       </a>
