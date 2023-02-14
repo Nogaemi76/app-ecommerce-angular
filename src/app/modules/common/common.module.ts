@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from 'src/app/material.module';
 
 import { AboutComponent } from './components/about/about.component';
@@ -14,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
     LoginComponent
   ],
   imports: [
+    BrowserModule,
     MaterialModule,
   ]
 })
