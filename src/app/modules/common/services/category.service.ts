@@ -17,7 +17,7 @@ export class CategoryService {
   constructor(private db: AngularFirestore) { }
 
   getAllCategories() {
-    this.categoryCollection = this.db.collection<Category>('categories')
+    this.categoryCollection = this.db.collection<Category>('categories');
 
     this.categories = this.categoryCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {

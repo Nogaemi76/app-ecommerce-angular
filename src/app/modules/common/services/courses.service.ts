@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { map, Observable } from 'rxjs';
 
 export interface Courses {
-  catgegory: string;
+  category: string;
   description: string;
   price: number;
   title: string;
@@ -28,8 +28,6 @@ export class CoursesService {
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Courses;
         const id = a.payload.doc.id;
-        // console.log(data);
-        // console.log(id);
         return { id: id, ...data};
       }))
     );
