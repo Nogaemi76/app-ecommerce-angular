@@ -1,26 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { CategoryService, CategoryWithId } from '../../services/category.service';
-import { CoursesService, CoursesWithId } from '../../services/courses.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { map, mergeMap, Subscription } from 'rxjs';
+import { CategoryService } from '../../services/category.service';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
-export class CoursesComponent implements OnInit {
-  allCategories!:CategoryWithId[];
-  allCourses!: CoursesWithId[];
+export class CoursesComponent implements OnInit, OnDestroy {
+  allCategories!:any[];
+  allCourses!: any[];
+  subscription!: Subscription;
 
   constructor(private categoryService: CategoryService, private coursesService: CoursesService) { }
 
   ngOnInit() {
-    this.categoryService.getAllCategories().subscribe(categories => {
-      this.allCategories = categories;
-    });
+    this.subscription = this.categoryService.getAllCategories()
+      .pipe(mergeMap(categories => this.coursesService.getAllCourses().pipe(
+        map(courses => [categories, courses])
+      ))).subscribe(([categories, courses]) => {
+        this.allCategories = categories;
+        this.allCourses = courses;
+      });
+  }
 
-    this.coursesService.getAllCourses().subscribe(courses => {
-      this.allCourses = courses;
-    })
+  getCoursesByCatId(catId: string) {
+    return this.allCourses.filter(course => course.category == catId);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

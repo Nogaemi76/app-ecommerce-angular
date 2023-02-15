@@ -1,7 +1,7 @@
 <mat-tab-group>
   <mat-tab *ngFor="let category of allCategories" [label]="category.label">
     <div fxLayout="row wrap" fxLayout.lt-md="column">
-      <ng-container *ngFor="let course of allCourses">
+      <ng-container *ngFor="let course of getCoursesByCatId(category.id)">
         <mat-card class="card__item" fxLayout="column" fxLayoutAlign="space-between center">
           <mat-card-header class="card__header">
             <mat-card-title>{{ course.title }}</mat-card-title>
@@ -11,7 +11,10 @@
             <p>{{ course.description }}</p>
           </mat-card-content>
           <mat-card-actions class="card__actions">
-            <button mat-flat-button color="primary" class="card__button">Add Course</button>
+            <button mat-flat-button color="primary" class="card__button">
+              <mat-icon>add_shopping_cart</mat-icon>
+              <span>Add Course</span>
+            </button>
           </mat-card-actions>
         </mat-card>
       </ng-container>
