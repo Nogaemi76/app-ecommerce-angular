@@ -10,7 +10,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment.development';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { CommonModule } from './modules/common/common.module';
+import { PagesModule } from './modules/pages/pages.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CoursesModule } from './modules/courses/courses.module';
@@ -30,7 +30,7 @@ import { SharedModule } from './modules/shared/shared.module';
     MaterialModule,
     AdminModule,
     AuthModule,
-    CommonModule,
+    PagesModule,
     CoursesModule,
     SharedModule
   ],
