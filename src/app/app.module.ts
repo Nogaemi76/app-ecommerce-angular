@@ -14,7 +14,7 @@ import { CommonModule } from './modules/common/common.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CoursesModule } from './modules/courses/courses.module';
-import { MenuModule } from './modules/menu/menu.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { MenuModule } from './modules/menu/menu.module';
     AuthModule,
     CommonModule,
     CoursesModule,
-    MenuModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

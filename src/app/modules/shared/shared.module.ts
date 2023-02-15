@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MaterialModule } from 'src/app/material.module';
-import { TopMenuComponent } from './components/top-menu/top-menu.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [
-    TopMenuComponent
+    HeaderComponent
   ],
   imports: [
     MaterialModule,
     AppRoutingModule
   ],
   exports: [
-    TopMenuComponent
+    HeaderComponent
   ]
 })
-export class MenuModule { }
+export class SharedModule { }
