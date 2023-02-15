@@ -1,0 +1,30 @@
+.card__item {
+  padding: 10px;
+  height: 480px;
+  width: calc(100%/3);
+}
+
+.card__header, .card__content p {
+  text-align: center;
+}
+
+.card__image {
+  height: 200px;
+  padding: 20px;
+}
+
+.card__actions, .card__button {
+  width: 100%;
+}
+
+@media screen and (max-width: 959px) {
+
+  .card__item {
+    height: auto;
+    width: 100%;
+  }
+
+  .card__image {
+    height: 150px;
+  }
+}

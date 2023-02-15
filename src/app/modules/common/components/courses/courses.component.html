@@ -1,5 +1,20 @@
 <mat-tab-group>
   <mat-tab *ngFor="let category of allCategories" [label]="category.label">
-    <h2>{{ category.label }}</h2>
+    <div fxLayout="row wrap" fxLayout.lt-md="column">
+      <ng-container *ngFor="let course of allCourses">
+        <mat-card class="card__item" fxLayout="column" fxLayoutAlign="space-between center">
+          <mat-card-header class="card__header">
+            <mat-card-title>{{ course.title }}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image [src]="course.urlImage" alt="course image" class="card__image">
+          <mat-card-content class="card__content">
+            <p>{{ course.description }}</p>
+          </mat-card-content>
+          <mat-card-actions class="card__actions">
+            <button mat-flat-button color="primary" class="card__button">Add Course</button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </div>
   </mat-tab>
 </mat-tab-group>
