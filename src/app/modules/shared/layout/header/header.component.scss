@@ -5,3 +5,11 @@
 ul {
   display: flex;
 }
+
+li {
+  margin-left: 10px;
+}
+
+.toolbar__spacer {
+  flex: 1 1 auto;
+}

@@ -3,6 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>DevCourses Shop</span>
+  <span class="toolbar__spacer"></span>
   <ul>
     <li>
       <a mat-button routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
@@ -18,11 +19,22 @@ true}">Home</a>
       <app-login-button></app-login-button>
     </li>
     <li>
-      <app-logout-button></app-logout-button>
+      <button mat-flat-button [matMenuTriggerFor]="menu" color="accent">
+        <mat-icon>account_circle</mat-icon>
+        <span>User name</span>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Orders</button>
+        <button mat-menu-item>Admin</button>
+        <div mat-menu-item>
+          <app-logout-button></app-logout-button>
+        </div>
+      </mat-menu>
     </li>
     <li>
-      <a mat-icon-button>
+      <a mat-flat-button>
         <mat-icon>shopping_cart</mat-icon>
+        <span>Cart</span>
       </a>
     </li>
   </ul>

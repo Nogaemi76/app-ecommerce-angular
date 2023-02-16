@@ -4,13 +4,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 const modules: any[] = [
   MatToolbarModule,
   MatButtonModule,
   MatIconModule,
   MatTabsModule,
-  MatCardModule
+  MatCardModule,
+  MatMenuModule
 ];
 
 @NgModule({
