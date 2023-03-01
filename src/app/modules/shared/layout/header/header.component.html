@@ -15,13 +15,13 @@ true}">Home</a>
     <li>
       <a mat-button routerLink="/about" routerLinkActive="active-link">About</a>
     </li>
-    <li>
+    <li *ngIf="!isLoggedIn">
       <app-login-button></app-login-button>
     </li>
-    <li>
+    <li *ngIf="isLoggedIn">
       <button mat-flat-button [matMenuTriggerFor]="menu" color="accent">
         <mat-icon>account_circle</mat-icon>
-        <span>User name</span>
+        <span>{{ currentUser?.name }}</span>
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Orders</button>

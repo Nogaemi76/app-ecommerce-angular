@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(public afAuth: AngularFireAuth) {
-    // this.afAuth.authState.subscribe(user => {
-    //   console.log(user);
-    // });
+  constructor(
+      public afAuth: AngularFireAuth,
+      public router: Router
+    ) {
   }
 
   logInWithGoogle() {
@@ -33,9 +34,14 @@ export class AuthService {
     return this.afAuth.signOut()
       .then((result) => {
         console.log('Successfully logged Out!');
+        this.router.navigate(['home']);
       })
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  getCurrentUser() {
+    return this.afAuth.user;
   }
 }
