@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MaterialModule } from 'src/app/material.module';
 import { LoginButtonComponent } from './components/buttons/login-button/login-button.component';
@@ -12,6 +13,7 @@ import { HeaderComponent } from './layout/header/header.component';
     LogoutButtonComponent
   ],
   imports: [
+    BrowserModule,
     MaterialModule,
     AppRoutingModule
   ],
